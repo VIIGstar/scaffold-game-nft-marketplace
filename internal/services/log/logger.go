@@ -3,7 +3,7 @@ package log
 
 import (
 	"os"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/pkg/config"
 
 	"github.com/sirupsen/logrus"
 	logrusadapter "logur.dev/adapter/logrus"

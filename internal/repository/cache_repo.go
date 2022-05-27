@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"logur.dev/logur"
-	"scaffold-api-server/internal/services/cache"
+	"scaffold-game-nft-marketplace/internal/services/cache"
 	"time"
 )
 

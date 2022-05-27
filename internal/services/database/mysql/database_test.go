@@ -4,9 +4,9 @@ import (
 	health "github.com/AppsFlyer/go-sundheit"
 	"github.com/AppsFlyer/go-sundheit/checks"
 	"github.com/stretchr/testify/assert"
-	"scaffold-api-server/internal/services/health-check"
-	"scaffold-api-server/internal/services/log"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/internal/services/health-check"
+	"scaffold-game-nft-marketplace/internal/services/log"
+	"scaffold-game-nft-marketplace/pkg/config"
 	"testing"
 	"time"
 )

@@ -4,30 +4,35 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/spf13/viper"
-	"gorm.io/gorm"
 	"logur.dev/logur"
-	"scaffold-api-server/internal/entities"
-	"scaffold-api-server/internal/services"
-	database "scaffold-api-server/internal/services/database/mysql"
-	"scaffold-api-server/internal/services/log"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/internal/entities"
+	"scaffold-game-nft-marketplace/internal/services"
+	"scaffold-game-nft-marketplace/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/services/log"
+	"scaffold-game-nft-marketplace/pkg/config"
 )
 
 type MigrateService struct {
 	services.DefaultService
 	logger logur.LoggerFacade
-	gormDB *gorm.DB
+	db     *database.DB
 }
 
 func main() {
 	migrateService := MigrateService{}
 	migrateService.Init()
+	defer migrateService.db.Close()
 
 	tables := []interface{}{
-		entities.Investor{},
+		entities.User{},
+		entities.ItemType{},
+		entities.Gun{},
+		entities.Fashion{},
+		entities.Booster{},
+		entities.Item{},
 	}
 
-	err := migrateService.gormDB.AutoMigrate(tables...)
+	err := migrateService.db.GormDB().AutoMigrate(tables...)
 	if err != nil {
 		migrateService.logger.Error(fmt.Sprintf("Seed failed, details: %v", err))
 		return
@@ -55,11 +60,7 @@ func (s *MigrateService) Init() {
 	if dbCf.Params == nil {
 		dbCf.Params = make(map[string]string)
 	}
-	gormDB, err := database.NewConnector(dbCf)
-	if err != nil {
-		panic(err)
-	}
 
-	s.gormDB = gormDB
+	s.db = database.New(logger, dbCf)
 	s.logger = logger
 }

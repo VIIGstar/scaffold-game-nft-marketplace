@@ -9,18 +9,18 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"scaffold-api-server/cmd/serverd/router"
-	"scaffold-api-server/internal/services/cache"
-	"scaffold-api-server/internal/services/database"
-	"scaffold-api-server/internal/services/log"
-	"scaffold-api-server/pkg"
-	build_info "scaffold-api-server/pkg/build-info"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/cmd/serverd/router"
+	"scaffold-game-nft-marketplace/internal/services/cache"
+	"scaffold-game-nft-marketplace/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/services/log"
+	"scaffold-game-nft-marketplace/pkg"
+	build_info "scaffold-game-nft-marketplace/pkg/build-info"
+	"scaffold-game-nft-marketplace/pkg/config"
 	"syscall"
 	"time"
 
 	pkgerrors "github.com/pkg/errors"
-	_ "scaffold-api-server/docs"
+	_ "scaffold-game-nft-marketplace/docs"
 )
 
 // Provisioned by ldflags

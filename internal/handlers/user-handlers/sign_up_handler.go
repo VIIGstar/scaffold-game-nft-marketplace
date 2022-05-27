@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"scaffold-api-server/internal/dtos"
-	"scaffold-api-server/internal/entities"
-	database "scaffold-api-server/internal/services/database/mysql"
-	"scaffold-api-server/pkg/auth"
-	app_http "scaffold-api-server/pkg/http"
+	"scaffold-game-nft-marketplace/internal/dtos"
+	"scaffold-game-nft-marketplace/internal/entities"
+	database "scaffold-game-nft-marketplace/internal/services/database/mysql"
+	"scaffold-game-nft-marketplace/pkg/auth"
+	app_http "scaffold-game-nft-marketplace/pkg/http"
 )
 
 // @Summary  Signup create new user

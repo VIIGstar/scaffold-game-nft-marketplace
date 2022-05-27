@@ -12,12 +12,12 @@ import (
 	"net/http/httptest"
 	"net/url"
 	"regexp"
-	"scaffold-api-server/internal/entities"
-	"scaffold-api-server/internal/repository"
-	"scaffold-api-server/internal/services/database"
-	"scaffold-api-server/internal/services/log"
-	"scaffold-api-server/pkg/auth"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/internal/entities"
+	"scaffold-game-nft-marketplace/internal/repository"
+	"scaffold-game-nft-marketplace/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/services/log"
+	"scaffold-game-nft-marketplace/pkg/auth"
+	"scaffold-game-nft-marketplace/pkg/config"
 	"testing"
 )
 

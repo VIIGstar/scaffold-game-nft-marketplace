@@ -7,7 +7,7 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
-	"scaffold-api-server/internal/entities"
+	"scaffold-game-nft-marketplace/internal/entities"
 )
 
 type InvestorDTO struct {

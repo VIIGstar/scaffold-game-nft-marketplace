@@ -3,9 +3,9 @@ package user
 import (
 	"context"
 	"logur.dev/logur"
-	"scaffold-api-server/internal/entities"
-	query_params "scaffold-api-server/internal/query-params"
-	"scaffold-api-server/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/entities"
+	query_params "scaffold-game-nft-marketplace/internal/query-params"
+	"scaffold-game-nft-marketplace/internal/services/database"
 )
 
 // New creates new impl impl and returns as User interface

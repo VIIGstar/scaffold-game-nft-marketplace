@@ -3,10 +3,10 @@ package user
 import (
 	"context"
 	"gorm.io/gorm"
-	"scaffold-api-server/internal/entities"
-	query_params "scaffold-api-server/internal/query-params"
-	"scaffold-api-server/pkg/database"
-	info_log "scaffold-api-server/pkg/info-log"
+	"scaffold-game-nft-marketplace/internal/entities"
+	query_params "scaffold-game-nft-marketplace/internal/query-params"
+	"scaffold-game-nft-marketplace/pkg/database"
+	info_log "scaffold-game-nft-marketplace/pkg/info-log"
 )
 
 func (i impl) Find(ctx context.Context, req query_params.GetUserParams, lock bool) (*entities.Investor, error) {

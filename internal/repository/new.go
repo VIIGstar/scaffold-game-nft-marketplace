@@ -2,8 +2,8 @@ package repository
 
 import (
 	"logur.dev/logur"
-	"scaffold-api-server/internal/services/cache"
-	"scaffold-api-server/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/services/cache"
+	"scaffold-game-nft-marketplace/internal/services/database"
 )
 
 // Registry ...

@@ -6,8 +6,8 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"scaffold-api-server/internal/services/log"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/internal/services/log"
+	"scaffold-game-nft-marketplace/pkg/config"
 	"strings"
 	"sync"
 )

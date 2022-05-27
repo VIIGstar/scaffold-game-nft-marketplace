@@ -6,11 +6,11 @@ import (
 	"github.com/AppsFlyer/go-sundheit/checks"
 	"gorm.io/gorm"
 	"logur.dev/logur"
-	"scaffold-api-server/internal/services"
-	mysql "scaffold-api-server/internal/services/database/mysql"
-	health_check "scaffold-api-server/internal/services/health-check"
-	"scaffold-api-server/pkg"
-	"scaffold-api-server/pkg/config"
+	"scaffold-game-nft-marketplace/internal/services"
+	mysql "scaffold-game-nft-marketplace/internal/services/database/mysql"
+	health_check "scaffold-game-nft-marketplace/internal/services/health-check"
+	"scaffold-game-nft-marketplace/pkg"
+	"scaffold-game-nft-marketplace/pkg/config"
 	"time"
 )
 
@@ -25,7 +25,7 @@ func New(logger logur.LoggerFacade, config config.DBConfig) *DB {
 	logger.Info("connecting to database")
 	mysql.SetLogger(logger)
 
-	db, err := mysql.NewConnector(config)
+	db, err := NewConnector(config)
 	if err != nil {
 		panic(fmt.Sprintf("connect database failed, error: %v", err))
 	}

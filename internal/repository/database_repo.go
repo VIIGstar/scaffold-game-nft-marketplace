@@ -2,8 +2,8 @@ package repository
 
 import (
 	"logur.dev/logur"
-	"scaffold-api-server/internal/repository/user"
-	"scaffold-api-server/internal/services/database"
+	"scaffold-game-nft-marketplace/internal/repository/user"
+	"scaffold-game-nft-marketplace/internal/services/database"
 )
 
 type DatabaseRepo interface {

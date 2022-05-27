@@ -2,7 +2,7 @@ package user_handlers
 
 import (
 	"logur.dev/logur"
-	"scaffold-api-server/internal/repository"
+	"scaffold-game-nft-marketplace/internal/repository"
 )
 
 type userHandler struct {

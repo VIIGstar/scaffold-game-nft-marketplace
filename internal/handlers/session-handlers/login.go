@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	query_params "scaffold-api-server/internal/query-params"
-	"scaffold-api-server/pkg/auth"
-	info_log "scaffold-api-server/pkg/info-log"
+	query_params "scaffold-game-nft-marketplace/internal/query-params"
+	"scaffold-game-nft-marketplace/pkg/auth"
+	info_log "scaffold-game-nft-marketplace/pkg/info-log"
 )
 
 // @Summary  Validate user then get access token
