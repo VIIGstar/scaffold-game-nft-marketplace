@@ -17,6 +17,7 @@ import (
 	"scaffold-game-nft-marketplace/internal/services/database"
 	"scaffold-game-nft-marketplace/internal/services/log"
 	"scaffold-game-nft-marketplace/pkg/auth"
+	base_entity "scaffold-game-nft-marketplace/pkg/base-entity"
 	"scaffold-game-nft-marketplace/pkg/config"
 	"testing"
 )
@@ -42,7 +43,7 @@ var (
 func TestSessionHandler_Login(t *testing.T) {
 	sqlDB, mock, _ := sqlmock.New()
 	investor := entities.Investor{
-		DefaultModel: entities.DefaultModel{
+		Base: base_entity.Base{
 			ID: 1,
 		},
 		Address:     walletAddress,

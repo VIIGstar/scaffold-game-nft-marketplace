@@ -44,6 +44,7 @@ func New(
 	r.Use(cors.New(config))
 	r.Use(auth.Middleware(logger))
 	r.Use(web.RequestIDMiddleware())
+	// TODO: log activity
 
 	// setup repo
 	repo := repository.New(logger, db, cacheClient)
@@ -52,7 +53,11 @@ func New(
 	systemHandler := system_handlers.New(buildInfo)
 	sessionHandler := session_handlers.New(logger, repo)
 	userHandler := user_handlers.New(logger, repo)
+	// TODO: asset-handlers - list items/get items
+	// TODO: nft-handlers - mint/auction/sell
+	// TODO: webhook-handlers - sync anything?
 
+	// --- ROUTER -----
 	rootURL := r.Group("api/v1")
 	rootURL.GET("/liveness", systemHandler.Liveness)
 

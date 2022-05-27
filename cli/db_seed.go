@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/viper"
 	"logur.dev/logur"
 	"scaffold-game-nft-marketplace/internal/entities"
+	_ "scaffold-game-nft-marketplace/internal/entities"
 	"scaffold-game-nft-marketplace/internal/services"
 	"scaffold-game-nft-marketplace/internal/services/database"
 	"scaffold-game-nft-marketplace/internal/services/log"
@@ -24,12 +25,11 @@ func main() {
 	defer migrateService.db.Close()
 
 	tables := []interface{}{
+		entities.Investor{},
 		entities.User{},
-		entities.ItemType{},
-		entities.Gun{},
-		entities.Fashion{},
-		entities.Booster{},
-		entities.Item{},
+		entities.Category{},
+		entities.Asset{},
+		entities.AssetTransaction{},
 	}
 
 	err := migrateService.db.GormDB().AutoMigrate(tables...)
