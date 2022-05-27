@@ -53,8 +53,7 @@ func New(
 	systemHandler := system_handlers.New(buildInfo)
 	sessionHandler := session_handlers.New(logger, repo)
 	userHandler := user_handlers.New(logger, repo)
-	// TODO: asset-handlers - list items/get items
-	// TODO: nft-handlers - mint/auction/sell
+	// TODO: asset-handlers - list items/get items/auction/sell
 	// TODO: webhook-handlers - sync anything?
 
 	// --- ROUTER -----

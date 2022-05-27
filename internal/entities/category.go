@@ -5,13 +5,13 @@ import (
 	base_type "scaffold-game-nft-marketplace/pkg/base-type"
 )
 
-type CategoryType base_type.DefinedStringType
+type CategoryCode base_type.DefinedStringType
 
 const (
-	Character   = CategoryType("character")
-	Weapon      = CategoryType("weapon")
-	Accessories = CategoryType("accessories")
-	Box         = CategoryType("box")
+	Character   = CategoryCode("character")
+	Weapon      = CategoryCode("weapon")
+	Accessories = CategoryCode("accessories")
+	Box         = CategoryCode("box")
 )
 
 // Category will insert whenever has new game-items/game-assets with un-recognized category
@@ -20,6 +20,6 @@ type Category struct {
 	base_entity.Base
 	base_entity.Reference
 	Name string `json:"name" gorm:"size:256"`
-	// Includes: Character | Weapon | Accessories | Box
-	Code string `json:"code" gorm:"size:64;unique"`
+	// Includes: Character | Weapon | Accessories | Box ...
+	Code CategoryCode `json:"code" gorm:"size:64;unique"`
 }
