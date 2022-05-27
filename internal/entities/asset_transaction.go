@@ -6,10 +6,15 @@ import (
 )
 
 type TransactionType base_type.DefinedStringType
+type TransactionStatus base_type.DefinedStringType
 
 const (
 	Sync     = TransactionType("sync")
 	Fallback = TransactionType("fallback")
+
+	Synced     = TransactionStatus("synced")
+	Processing = TransactionStatus("processing")
+	Verified   = TransactionStatus("verified")
 )
 
 //AssetTransaction sync from network or insert after execute call JSON RPC
@@ -22,7 +27,9 @@ type AssetTransaction struct {
 	// Hash of block which transaction belong to
 	BlockHash string `json:"block_hash" gorm:"type:varchar;index"`
 	// Includes: Sync | Fallback
-	Type    TransactionType `json:"type" gorm:"size:16;NOT NULL"`
-	AssetID int64           `json:"asset_id"`
-	Asset   Asset           `json:"asset"`
+	Type TransactionType `json:"type" gorm:"size:16;NOT NULL"`
+	// Includes: Synced (right after reading from block) | Processing (if exists data to update business) | Verified (Nothing left to do)
+	Status  TransactionStatus `json:"status"`
+	AssetID int64             `json:"asset_id"`
+	Asset   Asset             `json:"asset"`
 }
