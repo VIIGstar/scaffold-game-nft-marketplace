@@ -26,7 +26,6 @@ func main() {
 
 	tables := []interface{}{
 		entities.Investor{},
-		entities.User{},
 		entities.Category{},
 		entities.Asset{},
 		entities.AssetTransaction{},

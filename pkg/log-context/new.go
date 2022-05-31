@@ -22,7 +22,7 @@ type LogContext struct {
 	trackingData map[string]interface{}
 }
 
-func NewTrackingLogContext(ctx context.Context) *LogContext {
+func New(ctx context.Context) *LogContext {
 	lCtx := &LogContext{
 		ctx:          ctx,
 		trackingData: make(map[string]interface{}),
